@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Sinatra Portfolio Project Blog"
-date:   2017-03-06 18:20:56 +0000
+date:   2017-03-06 13:20:56 -0500
 ---
 
 
