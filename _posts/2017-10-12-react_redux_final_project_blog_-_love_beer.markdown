@@ -6,7 +6,7 @@ permalink:  react_redux_final_project_blog_-_love_beer
 ---
 
 
-I built a simple React/Redux app that allows beer lovers to share beers they like.  Users can create a new beer, view beers, and upvote or downvote beers they like or dislike.  RESTful routing is incorporated using `react-router` and `react-router-dom`.  I did have some trouble with matching too many routes, for example, requesting `/beers/new` would match both `/beers/new` (correct) `/beers/:id` (not what I wanted).  At first, I just changed the url for the show page to `/beer/:id`, which solved the problem, but of course also deviated from RESTful routing practices.  This bothered me, kind of like a small stone in my shoe, until I *had* to fix it.  Of course there is always a way!  The `Switch` wrapper from `react-router-dom` was the solution.  By wrapping the `<Routes/>` in `<Switch>` tags, like so,
+I built a simple React/Redux app that allows beer lovers to share beers they like.  Users can create a new beer, view beers, and upvote or downvote beers they like or dislike.  RESTful routing is incorporated using `react-router` and `react-router-dom`.  I did have some trouble with matching too many routes, for example, requesting `/beers/new` would match both `/beers/new` (correct) `/beers/:id` (not what I wanted).  At first, I just changed the url for the show page to `/beer/:id`, which solved the problem, but of course also deviated from RESTful routing practices.  This bothered me, kind of like a small stone in my shoe, until I *had* to fix it.  Of course there is always a way!  The `Switch` wrapper from `react-router-dom` was the solution.  By wrapping the `Routes` in `Switch` tags, like so,
 
 ```
 <Switch>
@@ -31,7 +31,7 @@ Then, from a beer show page, accessing the `:id` property is a breeze with `prop
 
         this.props.history.push('/beers/' + `${this.props.beers[this.props.beers.length-1].id}`)
 
-Ugly, for sure.  And, of course, it won't work if the request takes more than one second to come back.  NBD, though, as the user would just be looking at a form and the beer would be there upon navigating to the beers index.  If anyone comes up with something more elegant, I'd love to know about it! (I did find some elegant solutions, but they were for static urls and instances where there was no need to wait for a good response from a back-end API.) 
+Ugly, for sure.  And, of course, it won't work if the request takes more than one second to come back.  NBD, though, as the user would just be looking at an empty form (it resets after submission) and the beer would be there upon navigating to the beers index.  If anyone comes up with something more elegant, I'd love to know about it! (I did find some elegant solutions, but they were for static urls and instances where there was no need to wait for a good response from a back-end API.) 
 
 I am excited to continue to learn React/Redux, and see how it evolves.  Snappy, single-page apps are becoming more common, and now I can build them!!!
 
