@@ -24,7 +24,7 @@ I built a simple React/Redux app that allows beer lovers to share beers they lik
 Then, from a beer show page, accessing the `:id` property is a breeze with `props.match.params.id`!  One of the more cumbersome pieces of my code is deciding whether to redirect after submitting to create a new beer object.  Since creation is handled on the back-end, there's no (easy) way (that I've yet found -- there probably is!) for the `handleSubmit` function to know whether a beer was successfully created.  My solution is definitely feels like a hack!  Here is it: 
 
 1. I imported `{ withRouter }` from `react-router` in my form container.
-2. I declared a const `length` at the first line of the `handleSubmit` method and's set it equal to the length of `beers` in the current state.
+2. I declared a const `length` at the first line of the `handleSubmit` method and set it equal to the length of `beers` in the current state.
 3. I added an `if` statement inside a one-second `setTimeout` to check if the state (`state.beers`, in my case) had grown since the `handleSubmit` started.
 4. If so, I used `this.props.history`, which comes from importing `withRouter`, to `.push` the newly created beer's show url to the `history`.
 5. This also felt a bit hacky, since you can't use `[-1]` to access the last element of a state array (I haven't figured out why), so I had to use `this.props.beers.length - 1` as my index, and call `.id`.  The full line of code looks like this:
