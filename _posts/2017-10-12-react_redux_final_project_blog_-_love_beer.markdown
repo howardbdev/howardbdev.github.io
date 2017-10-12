@@ -10,12 +10,12 @@ I built a simple React/Redux app that allows beer lovers to share beers they lik
 
 ```
 <Switch>
-<Route exact path="/" render={Home} />
-<Route exact path="/about" render={About} />
-<Route exact path="/login" render={Login} />
-<Route exact path="/beers/new" component={BeerForm}/>
-<Route exact path="/beers" component={Beers}/>
-<Route path="/beers/:id" component={Beer} />
+  <Route exact path="/" render={Home} />
+  <Route exact path="/about" render={About} />
+  <Route exact path="/login" render={Login} />
+  <Route exact path="/beers/new" component={BeerForm}/>
+  <Route exact path="/beers" component={Beers}/>
+  <Route path="/beers/:id" component={Beer} />
 </Switch>
 ```
 
